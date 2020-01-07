@@ -2,18 +2,22 @@
 
 Entities
 
-- fitClasses <---- class>
-    - id
-    - name
+- Name_FitClass
+    - class_id
+    - class_name
+    - class_type
+    - class_duration
+    - class_intensity_level
+    - class_location
+    - total_registered
+    - max_allowed_registered
+
 
 - Users
-     - id
-     - username
+     - user_id
+     - user_name
+     - class_id
 
-- Instructors
-    - id
-    - username
-    
 Relationships:
 
 - fitClasses \* --- \* Users  \\ Many fitClasses can belong to Many users
