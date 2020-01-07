@@ -1,26 +1,24 @@
-
-exports.up = function(knex) {
-  
+exports.up = function(knex, Promise) {
+  return knex.schema.createTable("name_fitClass", tbl => {
+    tbl.incrementss();
+    tbl
+      .integer("class_id")
+      .unsigned()
+      .notNullable()
+      .references("id")
+      .inTable("users")
+      .onDelete("CASCADE")
+      .onUpdate("CASCADE");
+    tble.string("class_name", 255);
+    tbl.string("class_type", 255);
+    tbl.string("class_duration", 255);
+    tbl.string("class_intensity_level", 255);
+    tbl.string("class_location");
+    tbl.string("total_registered", 10);
+    tbl.string("max_allowed_registered", 10);
+  });
 };
 
-exports.down = function(knex) {
-  
+exports.down = function(knex, Promise) {
+  return knex.schema.dropTableIfExists("name_fitClass");
 };
-CREATE TABLE "Name_FitClass" (
-	"class_id" serial NOT NULL,
-	"class_name" varchar(255),
-	"class_type" varchar(255),
-	"class_duration" varchar(255),
-	"class_intensity_level" varchar(255),
-	"class_location" varchar(255),
-	"total_registered" varchar(255),
-	"max_allowed_registered" varchar(255),
-	CONSTRAINT "Name_FitClass_pk" PRIMARY KEY ("class_id")
-) WITH (
-  OIDS=FALSE
-);
-
-
-ALTER TABLE "Name_FitClass" 
-ADD CONSTRAINT "Name_FitClass_fk0" 
-FOREIGN KEY ("class_id") REFERENCES "Users"("class_id");
