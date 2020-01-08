@@ -1,6 +1,6 @@
-exports.up = function(knex) {
-    return knex.schema.createTable("user_course", tbl => {
-      tbl.increments();
+exports.up = async function(knex, Promise) {
+    await knex.schema.createTable("user_course", tbl => {
+      tbl.increments("id").primary();
       tbl
         .integer("user_id");
         tbl
@@ -8,6 +8,6 @@ exports.up = function(knex) {
     });
   };
   
-  exports.down = function(knex) {
+  exports.down = function(knex, Promise) {
     return knex.schema.dropTableIfExists("user_course");
   };
