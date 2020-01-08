@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
       .integer("class_id")
       .unsigned()
       .notNullable()
+      .references('id')
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     tbl.string("class_name", 255);
