@@ -1,18 +1,17 @@
-exports.up = function(knex, Promise) {
+exports.up = function(knex) {
   return knex.schema.createTable("users", tbl => {
     tbl.increments();
     tbl
-      .string("user_name", 256)
-      .notNullable()
-      .unique();
+      .string("first_name", 128)
+      .notNullable();
+    tbl.string("last_name", 128).notNullable();
+    tbl.string("username", 128).notNullable();
     tbl.string("password").notNullable();
+    tbl.string("email", 128).notNullable().unique();
     tbl.boolean("instructor").notNullable();
-    tbl.string("class_id").unsigned().notNullable();
   });
 };
 
-exports.down = function(knex, Promise) {
+exports.down = function(knex) {
   return knex.schema.dropTableIfExists("users");
 };
-
-// ALTER TABLE "Users" ADD CONSTRAINT "Users_fk0" FOREIGN KEY ("class_id") REFERENCES "Users"("class_id");
