@@ -16,7 +16,6 @@ exports.up = function(knex, Promise) {
     tbl.string("class_location");
     tbl.string("total_registered", 10);
     tbl.string("max_allowed_registered", 10);
-    tbl.integer("instructor_id").references('user_id').inTable('users');
   });
 };
 

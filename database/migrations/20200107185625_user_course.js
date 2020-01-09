@@ -1,10 +1,22 @@
 exports.up = function(knex, Promise) {
-    knex.schema.createTable("user_course", tbl => {
+    return knex.schema.createTable("user_course", tbl => {
       tbl.increments();
       tbl
-        .integer("user_id");
+        .integer("user_id")
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('users')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
         tbl
-        .integer("class_id");
+        .integer("class_id")
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('name_fitClass')
+        .onDelete("CASCADE")
+        .onUpdate("CASCADE");
     });
   };
   
