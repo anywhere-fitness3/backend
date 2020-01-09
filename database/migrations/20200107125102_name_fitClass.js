@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
       .unsigned()
       .notNullable()
       .references('id')
+      .inTable('users')
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
     tbl.string("class_name", 255);
