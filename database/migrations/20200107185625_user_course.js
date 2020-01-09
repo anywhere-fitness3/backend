@@ -5,16 +5,16 @@ exports.up = function(knex, Promise) {
       .integer("user_id")
       .unsigned()
       .notNullable()
-      .references("id")
-      .inTable("users")
-      .onDelete("CASCADE")
-      .onUpdate("CASCADE");
+      .references('id')
+      .inTable('users')
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE');
     tbl
       .integer("class_id")
       .unsigned()
       .notNullable()
-      .references("id")
-      .inTable("name_fitClass")
+      .references('id')
+      .inTable('name_fitClass')
       .onDelete("CASCADE")
       .onUpdate("CASCADE");
   });
