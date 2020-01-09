@@ -11,8 +11,7 @@ exports.seed = function(knex, Promise) {
        class_intensity_level: "Easy",
        class_location: "Los Angeles",
        total_registered: 10,
-       max_allowed_registered: 15,
-       instructor_id: 2,
+       max_allowed_registered: 15
       },
     ]);
   });

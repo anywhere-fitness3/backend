@@ -1,4 +1,4 @@
-exports.up = function(knex) {
+exports.up = function(knex, Promise) {
   return knex.schema.createTable("users", tbl => {
     tbl.increments();
     tbl
@@ -12,6 +12,6 @@ exports.up = function(knex) {
   });
 };
 
-exports.down = function(knex) {
+exports.down = function(knex, Promise) {
   return knex.schema.dropTableIfExists("users");
 };
