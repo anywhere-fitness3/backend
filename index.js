@@ -1,16 +1,9 @@
 require("dotenv").config();
-const express = require("express");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const cors = require('cors');
-const server = express();
 
-server.use(morgan("dev"));
-server.use(helmet());
-server.use(cors());
+const server = require("./api/server.js");
 
-const port = process.env.port || 5000;
+const port = process.env.PORT || 9000;
 
 server.listen(port, () => {
-  console.log("Server is up and running! ");
+  console.log(`\n* Server Running on http://localhost:${port} *\n`);
 });
