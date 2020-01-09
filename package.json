@@ -22,7 +22,7 @@
   "homepage": "https://github.com/anywhere-fitness3/backend#readme",
   "jest": {
     "testEnvironment": "node"
-  }
+  },
   "dependencies": {
     "axios": "^0.19.1",
     "bcryptjs": "^2.4.3",
