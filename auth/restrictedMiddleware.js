@@ -1,19 +1,21 @@
-const jsonwebtok = require("jsonwebtoken");
-const secrets = require("./secrets");
+const jwt = require("jsonwebtoken");
+const secrets = require("./secrets.js");
 
 module.exports = (req, res, next) => {
     const token = req.headers.authorization;
     if(token) {
-        jsonwebtok.verify(token, secrets.jwtSecret, (err, decodedToken) => {
+        jwt.verify(token, secrets.jwtSecret, (err, decodedToken) => {
             if (err)
  {
-     return res.status(401).json({ message: "Login Required" });
+     //token not working
+     return res.status(401).json({ message: "Login Failed" });
  } else {
      req.decodedToken = decodedToken;
      next();
  }
         });
     } else {
+        //token working
         return res.status(401).json({ message: "Login Required" });
     }
 };
