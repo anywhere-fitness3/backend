@@ -1,4 +1,4 @@
-const server = require("../server.js");
+// const server = require("../api/server.js");
 const router = require("express").Router();
 const Usersmodel = require("./usersModel");
 const restricted = require("../auth/restricted.js");
