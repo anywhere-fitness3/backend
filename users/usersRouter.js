@@ -1,4 +1,4 @@
-// const server = require("../api/server.js");
+const server = require("../api/server.js");
 const router = require("express").Router();
 const Usersmodel = require("./usersModel");
 const restricted = require("../auth/restricted.js");
@@ -8,7 +8,7 @@ module.exports = router;
 //get the users
 router.get("/", restricted, async (req, res) => {
   try {
-    const users = await Usersmodel.find();
+    const users = await Usersmodel.findAll();
     res.status(200).json(users);
   } catch (error) {
     console.log(error);
@@ -32,14 +32,12 @@ router.get("/:id/classes", restricted, async (req, res) => {
   }
 });
 
-//delet a user
-router.post("/:id/classes/", async (req, res) => {
-  try {
-    const count = await usersmodel.remove(req.params.id);
-    if (count > 0) {
-      res.status(200).json({
-        message: "The user has been "
-      });
-    }
-  }
-});
+// //delet a user
+// router.post("/:userid/classes/", restricted, async (req, res) => {
+//   try {
+//     const classes = {
+//       user_id: req.params.userid,
+//       class_id: req.params.classId,
+//     }
+//       });
+//     }
