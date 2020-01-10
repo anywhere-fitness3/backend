@@ -2,7 +2,6 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const authenticate = require('../auth/restrictedMiddleware.js');
 const authRouter = require('../auth/authRouter.js');
 
 const usersRouter = require('../users/usersRouter.js');
@@ -16,10 +15,12 @@ configureMiddleware(server);
 server.use('/users', usersRouter);
 server.use('/auth', authRouter);
 server.use('/classes', classesRouter);
+server.use('/usersCourse', usersCourseRouter);
 
-server.use(cors());
-server.use(morgan('dev'));
 server.use(express.json());
+server.use(helmet());
+server.use(cors());
+
 
 server.get('/', (req, res) => {
     res

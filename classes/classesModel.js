@@ -1,10 +1,9 @@
-const database = require('../data/dbConfig');
+const database = require('../database/db-config');
 
 module.exports = {
     add, 
     find, 
-    findBy
-    findById,
+    findBy,
     remove, 
     update
 };
