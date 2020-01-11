@@ -1,9 +1,8 @@
-const server = require("../api/server.js");
 const router = require("express").Router();
 const Usersmodel = require("./usersModel");
-const restricted = require("../auth/restricted.js");
+const restricted = require("../auth/restrictedMiddleware.js");
 
-module.exports = router;
+
 
 //get the users
 router.get("/", restricted, async (req, res) => {
@@ -32,12 +31,4 @@ router.get("/:id/classes", restricted, async (req, res) => {
   }
 });
 
-// //delet a user
-// router.post("/:userid/classes/", restricted, async (req, res) => {
-//   try {
-//     const classes = {
-//       user_id: req.params.userid,
-//       class_id: req.params.classId,
-//     }
-//       });
-//     }
+module.exports = router;

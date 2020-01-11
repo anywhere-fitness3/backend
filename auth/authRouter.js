@@ -63,5 +63,3 @@ function generateToken(user) {
 }
 
 module.exports = router;
-
-//alternatively const secret = secrets.jwtSecret
