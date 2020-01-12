@@ -11,7 +11,7 @@ Larry Marcum - PL Khoa Tran(Jack), Tyler Miller, Matthew Orth, Amy Barba
 <strong> Launch URL https://anywherefitness3.netlify.com/ <strong>
 
 
-![alt text](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwimj5DBg_3mAhXIrJ4KHXQmBi0QjRx6BAgBEAQ&url=http%3A%2F%2Fbayyoga.com%2F2017%2F05%2F22%2Ffree-yoga-in-the-park-holiday-schedule%2F&psig=AOvVaw1RXPC9QqZCeP2p6VLXEm-p&ust=1578882913818922 "Go Fit Anywhere Page")
+![alt text](http://bayyoga.com/wp-content/uploads/2017/05/FullSizeRender-1.jpg "Go Fit Anywhere Page")
 
 ![alt text](https://lh3.googleusercontent.com/eFh2GbCU40sSDVn71ZSPRpYBfZa9eVFY65LXGFnbDz1g7fXGUxAKZAzUb-wfbH-zdUYB=s47)
 
