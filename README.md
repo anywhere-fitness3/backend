@@ -13,7 +13,9 @@ Larry Marcum - PL Khoa Tran(Jack), Tyler Miller, Matthew Orth, Amy Barba
 
 ![alt text](http://bayyoga.com/wp-content/uploads/2017/05/FullSizeRender-1.jpg "Go Fit Anywhere Page")
 
-[title](https://app.dbdesigner.net/designer/schema/295702)
+![alt text](https://photos.google.com/photo/AF1QipMqgA25QNoc6qOG_e-XOyfqeDrAYGJexMFrZw_6)
+
+
 ## ENTRY ENDPOINTS
 
 ### REGISTER
