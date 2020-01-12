@@ -2,7 +2,6 @@
 
 ![alt text](https://source.unsplash.com/user/victorfreitas/1200x400 "alt-text")
 
-https://source.unsplash.com/user/victorfreitas/1200x400
 
 https://app.dbdesigner.net/designer/schema/295702
 
