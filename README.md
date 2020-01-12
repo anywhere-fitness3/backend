@@ -10,7 +10,7 @@ Larry Marcum - PL Khoa Tran(Jack), Tyler Miller, Matthew Orth, Amy Barba
 <strong> Launch URL https://anywherefitness3.netlify.com/ <strong>
 
 
-![alt text]( https://photos.google.com/photo/AF1QipP7gXzQLvz8WQFXsDWu0qJKw1BgkaYbqYFP4K4b "Go Fit Anywhere Page")
+![alt text](https://app.dbdesigner.net/designer/schema/295702 "Go Fit Anywhere Page")
 
 ![alt text](https://lh3.googleusercontent.com/eFh2GbCU40sSDVn71ZSPRpYBfZa9eVFY65LXGFnbDz1g7fXGUxAKZAzUb-wfbH-zdUYB=s47)
 
