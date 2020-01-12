@@ -1,4 +1,6 @@
-Go Fit Anywhere
+# Go Fit Anywhere
+
+![alt text](https://source.unsplash.com/user/victorfreitas/1200x400 "alt-text")
 
 https://source.unsplash.com/user/victorfreitas/1200x400
 
