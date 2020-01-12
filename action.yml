@@ -1,0 +1,21 @@
+name: 'ReadMe API GitHub Sync'
+description: 'Sync API Spec files to ReadMe automatically'
+author: 'ReadMe'
+branding:
+  icon: 'code'
+  color: 'blue'
+inputs: 
+  repo-token:
+    description: 'The GITHUB_TOKEN secret'
+  api-file-path:
+    description: 'The path for your API spec file'
+  readme-api-key:
+    description: 'Your API key for your ReadMe project'
+  readme-api-id:
+    description: 'ID for the API Setting in ReadMe'
+  readme-api-version:
+    description: 'ReadMe version to sync API into'
+runs:
+  using: 'node12'
+  main: 'main.js'
+© 2020 GitHub, Inc.
