@@ -1,3 +1,38 @@
+Go Fit Anywhere
+
+https://source.unsplash.com/user/victorfreitas/1200x400
+
+https://app.dbdesigner.net/designer/schema/295702
+
+ENTRY ENDPOINTS"
+
+REGISTER
+
+https://gofitanywhere.herokuapp.com/api/auth/register
+
+Expects:
+First name
+Last name
+Username
+Password
+Email
+
+
+| Method  |  Endpoint | Output  | Description
+| --- | --- | --- | --- |
+| POST     |    /api/auth/register   | token  | Register new user   |
+
+ LOGIN
+
+https://gofitanywhere.herokuapp.com/api/auth/login
+
+Expects:
+Username
+Password
+
+
+
+
 
 [/block]
 
