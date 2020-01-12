@@ -12,7 +12,7 @@ Larry Marcum - PL Khoa Tran(Jack), Tyler Miller, Matthew Orth, Amy Barba
 
 ![alt text]( https://photos.google.com/photo/AF1QipP7gXzQLvz8WQFXsDWu0qJKw1BgkaYbqYFP4K4b "Go Fit Anywhere Page")
 
-![alt text](https://photos.app.goo.gl/147SNB7xhtktbQ6m9)
+![alt text](Screen Shot 2020-01-11 at 3.15.03 PM.jpeg)
 
 
 ## ENTRY ENDPOINTS
