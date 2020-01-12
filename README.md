@@ -13,7 +13,7 @@ Larry Marcum - PL Khoa Tran(Jack), Tyler Miller, Matthew Orth, Amy Barba
 
 ![alt text](http://bayyoga.com/wp-content/uploads/2017/05/FullSizeRender-1.jpg "Go Fit Anywhere Page")
 
-![alt text](https://photos.google.com/photo/AF1QipMqgA25QNoc6qOG_e-XOyfqeDrAYGJexMFrZw_6)
+
 
 
 ## ENTRY ENDPOINTS
@@ -47,7 +47,7 @@ Password
 | POST     |    /api/auth/login   | token and welcome message | Registered user login   |
 
 
-## UTILITY ENDPOINTS"
+## UTILITY ENDPOINTS
 
 | Method  |  Endpoint | Output  | Description
 | --- | --- | --- | --- |
