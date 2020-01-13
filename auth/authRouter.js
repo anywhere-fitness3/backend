@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
-const bcrypt = require('bcyrptjs');
+const bcrypt = require('bcryptjs');
 const secrets = require('./secrets.js');
 
 const Usersmodel = require('../users/usersModel.js');
@@ -8,26 +8,32 @@ const Usersmodel = require('../users/usersModel.js');
 //endpoints  beginning with api/auth
 // async? await?
 
-router.post('/register',  (req, res) => {
+router.post('/register', async (req, res) => {
     let user = req.body;
-    const hash = bcrypt.hashSync(user.password, 10);
-    user.password = hash;
-
-Usersmodel.add(user)
-.then(saved => {
-    const token = generateToken(saved);
-    res.status(201).json
-    ({created_user: saved, 
-        id: saved.id,
-        token:token, 
-    message: 'New user creted' 
-});
-})
-.catch(error => {
-    console.log(error);
-    res.status(500).json
-    ({ message: 'New User not created' 
-});
+    // console.log(user);
+    // const hash = bcrypt.hashSync(user.password, 10);
+    // user.password = hash;
+try{
+    const added = await Usersmodel.add(user)
+    res.status(201).json(added)
+} catch {
+    res.status(500).json({ message: "user failed" })
+}
+    // Usersmodel.add(user)
+    // .then(saved => {
+        // const token = generateToken(saved);
+        // res.status(201).json({
+            // created_user: saved, 
+            // id: saved.id,
+            // token:token, 
+    //     message: 'New user created' 
+    // });
+    // })
+    // .catch(error => {
+    //     console.log(error);
+    //     res.status(500).json({ 
+    //     message: 'New User not created' })
+    // });
 });
 
 router.post('/login', (req, res) => {
@@ -36,14 +42,13 @@ router.post('/login', (req, res) => {
     Usersmodel.findBy({ username })
     .first()
     .then(user => {
-        if (user && bcrypt.compareSync(password, user.pasword)) {
+        if (user && bcrypt.compareSync(password, user.password)) {
             const token = generateToken(user);
             res.status(200).json({
                 username: user.username,
                 id: user.id,
                 token: token,  
                 message: 'Welcome!'
-                // 'Welcome ${user.username}!'
             });
         } else {
             res.status(401).json({ message: 'Login Failed' });
@@ -52,7 +57,7 @@ router.post('/login', (req, res) => {
     .catch(error => {
         console.log(error);
         res.status(500).json({ 
-            message: 'Login could not be created',
+            message: 'Login could not be created',})
     });
 });
 
