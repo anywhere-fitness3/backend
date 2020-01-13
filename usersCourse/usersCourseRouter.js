@@ -2,7 +2,7 @@ const router = require("express").Router();
 const UsersCoursemodel = require("./usersCourseModel.js");
 
 // //get classes by id
-router.get("/", restricted, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const usersCourse = await UsersCoursemodel.find();
     res.status(200).json(usersCourse);

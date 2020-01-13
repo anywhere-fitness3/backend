@@ -10,7 +10,7 @@ const usersCourseRouter = require('../usersCourse/usersCourseRouter.js');
 
 const server = express();
 
-configureMiddleware(server);
+// configureMiddleware(server);
 
 server.use('/users', usersRouter);
 server.use('/auth', authRouter);
