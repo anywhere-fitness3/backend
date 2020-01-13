@@ -1,7 +1,6 @@
 const router = require('express').Router();
-const bcrypt = require('bcyrptjs');
 const jwt = require('jsonwebtoken');
-
+const bcrypt = require('bcyrptjs');
 const secrets = require('./secrets.js');
 
 const Usersmodel = require('../users/usersModel.js');
@@ -16,14 +15,19 @@ router.post('/register',  (req, res) => {
 
 Usersmodel.add(user)
 .then(saved => {
-    res.status(201).json(saved);
-})
-.catch(error){
-    console.log(error);
-    res.status(500).json({
-        message: 'New User not created, error',
+    const token = generateToken(saved);
+    res.status(201).json
+    ({created_user: saved, 
+        id: saved.id,
+        token:token, 
+    message: 'New user creted' 
 });
-}
+})
+.catch(error => {
+    console.log(error);
+    res.status(500).json
+    ({ message: 'New User not created' 
+});
 });
 
 router.post('/login', (req, res) => {
@@ -35,31 +39,33 @@ router.post('/login', (req, res) => {
         if (user && bcrypt.compareSync(password, user.pasword)) {
             const token = generateToken(user);
             res.status(200).json({
-                user, 
-                message: `Welcome ${user.username}!`, 
-                token
+                username: user.username,
+                id: user.id,
+                token: token,  
+                message: 'Welcome!'
+                // 'Welcome ${user.username}!'
             });
         } else {
             res.status(401).json({ message: 'Login Failed' });
         }
     })
-    .catch(error) {
+    .catch(error => {
         console.log(error);
         res.status(500).json({ 
             message: 'Login could not be created',
     });
-}
 });
 
 function generateToken(user) {
     const payload = {
-        subject: user.id,
+        userid: user.id,
         username: user.username
     };
     const options = {
         expiresIn: "24 hours"
     };
-    return jwt.sign(payload, secrets.jwtSecret, options);
+    const token = jwt.sign(payload, secrets.jwtSecret, options);
+    return token;
 }
 
 module.exports = router;
