@@ -3,7 +3,6 @@ const Usersmodel = require("./usersModel");
 const restricted = require("../auth/restrictedMiddleware.js");
 
 
-
 //get the users
 router.get("/", restricted, async (req, res) => {
   try {

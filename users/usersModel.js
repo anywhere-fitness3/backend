@@ -4,24 +4,27 @@ module.exports = {
     add, 
     find, 
     findBy,
-    remove, 
-    update
+    findById
+    // remove, 
+    // update
 };
 
 function find() {
 return db('users')
-    .select('id', 'first_name', 
-    'last_name', 'username', 
-    'password', 'email');  
+    .select('id', 'username', 
+    'password');  
 }
+//  'first_name', 
+//     'last_name',
+// , 'email'
 
 function findBy(filter) {
  return db('users')
     .where(filter);  
 }
 
- function add(user) {
- return db('users')
+ async function add(user) {
+ return await db('users')
   .insert(user);
 // return findById(id);     
 }
@@ -29,23 +32,23 @@ function findBy(filter) {
 function findById(id) {
     return db('users')
        .where({ id })
-       .first();  
+    //    .first();  
    }
 
-async function remove(id) {
-    const removed = await db('users')
-    .where({ id })
-    .del();
-return removed;
-}
+// async function remove(id) {
+//     const removed = await db('users')
+//     .where({ id })
+//     .del();
+// return removed;
+// }
 
-async function update(id, changes) {
-    await db('users')
-    .where({ id })
-    .update(changes);
-    const updatedUser = await findbyId(id);
-    return updatedUser;
-}
+// async function update(id, changes) {
+//     await db('users')
+//     .where({ id })
+//     .update(changes);
+//     const updatedUser = await findbyId(id);
+//     return updatedUser;
+// }
 
 
 
